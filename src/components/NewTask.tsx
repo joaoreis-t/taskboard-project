@@ -32,18 +32,18 @@ export const NewTask = ({ onClose, onAdd }: NewTaskProps) => {
 
   return (
     <div  className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white p-6 rounded-md w-full max-w-md relative">
+      <div className="bg-white p-6 rounded-md w-full max-w-md relative dark:bg-[#303137]">
         <button
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 dark:text-[#BDBDBD] dark:hover:text-white"
           onClick={onClose}
         >
           ✖
         </button>
-        <h3 className="text-xl font-medium mb-4 text-[#3D3B3B]">Nova Tarefa</h3>
+        <h3 className="text-xl font-medium mb-4 text-[#3D3B3B] dark:text-[#BDBDBD]">Nova Tarefa</h3>
 
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           <div className="flex flex-col">
-            <label className="text-[#3D3B3B] font-medium mb-1" htmlFor="titulo">
+            <label className="text-[#3D3B3B] font-medium mb-1 dark:text-[#BDBDBD]" htmlFor="titulo">
               Título
             </label>
             <input
@@ -53,12 +53,12 @@ export const NewTask = ({ onClose, onAdd }: NewTaskProps) => {
               placeholder="Título da Tarefa"
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
-              className="w-full p-2 border rounded-md outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+              className="w-full p-2 border rounded-md outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 dark:text-white dark:placeholder:text-white"
               required
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-[#3D3B3B] font-medium mb-1" htmlFor="data">
+            <label className="text-[#3D3B3B] font-medium mb-1 dark:text-[#BDBDBD]" htmlFor="data">
               Data da Entrega
             </label>
             <input
@@ -66,12 +66,12 @@ export const NewTask = ({ onClose, onAdd }: NewTaskProps) => {
               id="data"
               value={dataEntrega}
               onChange={(e) => setDataEntrega(e.target.value)}
-              className="w-full p-2 border rounded-md outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+              className="w-full p-2 border rounded-md outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 dark:text-white dark:placeholder:text-white"
               required
             />
           </div>
           <div className="flex flex-col">
-            <label className="text-[#3D3B3B] font-medium mb-1" htmlFor="categoria">
+            <label className="text-[#3D3B3B] font-medium mb-1 dark:text-[#BDBDBD]" htmlFor="categoria">
               Categoria
             </label>
             <input
@@ -81,13 +81,13 @@ export const NewTask = ({ onClose, onAdd }: NewTaskProps) => {
               placeholder="Categoria da Tarefa"
               value={categoria}
               onChange={(e) => setCategoria(e.target.value)}
-              className="w-full p-2 border rounded-md outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
+              className="w-full p-2 border rounded-md outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 dark:text-white dark:placeholder:text-white"
               required
             />
           </div>
 
           <div className="flex flex-col">
-            <label className="text-[#3D3B3B] font-medium mb-1" htmlFor="descricao">
+            <label className="text-[#3D3B3B] font-medium mb-1 dark:text-[#BDBDBD]" htmlFor="descricao">
               Descrição
             </label>
             <textarea
@@ -97,7 +97,7 @@ export const NewTask = ({ onClose, onAdd }: NewTaskProps) => {
               placeholder="Descrição da Tarefa"
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
-              className="w-full p-2 border rounded-md outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 resize-none"
+              className="w-full p-2 border rounded-md outline-none focus:border-blue-500 focus:ring focus:ring-blue-200 resize-none dark:text-white dark:placeholder:text-white"
               required
             />
             <p className="text-gray-400 text-sm mt-1">Máx. 200 caracteres</p>

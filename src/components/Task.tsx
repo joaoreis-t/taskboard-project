@@ -10,37 +10,37 @@ interface TaskProps {
 export const Task = ({ onClose, task, onComplete, onDelete }: TaskProps) => {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white p-6 rounded-md w-full max-w-md relative">
+      <div className="bg-white p-6 rounded-md w-full max-w-md relative dark:bg-[#303137]">
         {/* Botão fechar */}
         <button
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 dark:text-[#BDBDBD] dark:hover:text-white"
           onClick={onClose}
         >
           ✖
         </button>
 
-        <h3 className="text-xl font-medium mb-4 text-[#3D3B3B]">{task.titulo}</h3>
+        <h3 className="text-xl font-medium mb-4 text-[#3D3B3B] dark:text-[#BDBDBD]">{task.titulo}</h3>
 
         {/* Visualização da tarefa */}
         <div className="flex flex-col gap-4">
           <div>
-            <p className="text-gray-500 font-medium mb-1">Data da Entrega</p>
-            <p className="text-[#3D3B3B]">{task.dataEntrega}</p>
+            <p className="text-gray-500 font-medium mb-1 dark:text-[#BDBDBD]">Data da Entrega</p>
+            <p className="text-[#3D3B3B] dark:text-white">{task.dataEntrega}</p>
           </div>
 
           <div>
-            <p className="text-gray-500 font-medium mb-1">Status</p>
-            <p className={`text-[#3D3B3B] ${task.status === "Concluído" ? "font-bold text-green-600" : ""}`}>{task.status}</p>
+            <p className="text-gray-500 font-medium mb-1 dark:text-[#BDBDBD]">Status</p>
+            <p className={`text-[#3D3B3B] ${task.status === "Concluído" ? "font-bold text-green-600" : "dark:text-white"}`}>{task.status}</p>
           </div>
 
           <div>
-            <p className="text-gray-500 font-medium mb-1">Categoria</p>
-            <p className="text-[#3D3B3B]">{task.categoria}</p>
+            <p className="text-gray-500 font-medium mb-1 dark:text-[#BDBDBD]">Categoria</p>
+            <p className="text-[#3D3B3B] dark:text-white">{task.categoria}</p>
           </div>
 
           <div>
-            <p className="text-gray-500 font-medium mb-1">Descrição</p>
-            <p className="text-[#3D3B3B]">{task.descricao}</p>
+            <p className="text-gray-500 font-medium mb-1 dark:text-[#BDBDBD]">Descrição</p>
+            <p className="text-[#3D3B3B] dark:text-white">{task.descricao}</p>
           </div>
           <div className="flex gap-2 justify-center mt-2">
             <button

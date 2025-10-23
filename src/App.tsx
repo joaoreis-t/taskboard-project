@@ -7,6 +7,8 @@ import { Task } from "./components/Task";
 import { Filter } from "./components/Filter";
 import { Footer } from "./components/sections/Footer";
 
+import { ThemeProvider } from "./context/ThemeContext";
+
 export type TaskType = {
   id: string;
   titulo: string;
@@ -97,42 +99,44 @@ function App() {
   };
 
   return (
-    <div className="bg-[#F5F5F5] min-h-screen">
-      <Header/>
-      <Dashboard tasks={tasks}/>
+    <div className="bg-[#F5F5F5] dark:bg-[#1B1B1B] min-h-screen">
+      <ThemeProvider>
+        <Header/>
+        <Dashboard tasks={tasks}/>
 
-      <Tasklist
-        tasks={tasks}
-        onOpenNewTask={() => setShowNewTask(true)}
-        onOpenTask={(task) => setShowTask(task)}
-        onOpenFilter={() => setShowFilter(true)}
-        filterStatus={filterStatus}
-      />
-
-      {showNewTask && (
-        <NewTask
-          onClose={() => setShowNewTask(false)}
-          onAdd={addTask}
+        <Tasklist
+          tasks={tasks}
+          onOpenNewTask={() => setShowNewTask(true)}
+          onOpenTask={(task) => setShowTask(task)}
+          onOpenFilter={() => setShowFilter(true)}
+          filterStatus={filterStatus}
         />
-      )}
 
-      {showTask && (
-        <Task
-          onClose={() => setShowTask(null)}
-          task={showTask}
-          onComplete={() => completeTask(showTask.id)}
-          onDelete={deleteTask}
-        />
-      )}
+        {showNewTask && (
+          <NewTask
+            onClose={() => setShowNewTask(false)}
+            onAdd={addTask}
+          />
+        )}
 
-      {showFilter && (
-        <Filter 
-          onClose={() => setShowFilter(false)} 
-          onApply={(status) => setFilterStatus(status)}
-        />
-      )}
+        {showTask && (
+          <Task
+            onClose={() => setShowTask(null)}
+            task={showTask}
+            onComplete={() => completeTask(showTask.id)}
+            onDelete={deleteTask}
+          />
+        )}
 
-      <Footer/>
+        {showFilter && (
+          <Filter 
+            onClose={() => setShowFilter(false)} 
+            onApply={(status) => setFilterStatus(status)}
+          />
+        )}
+        
+        <Footer/>
+      </ThemeProvider>
     </div>
   )
 }

@@ -16,7 +16,7 @@ export const Footer = () => {
 
   return (
     <footer
-      className={`text-center text-gray-500 pt-[10px] pb-[30px] transition-all ${
+      className={`text-center text-gray-500 pt-[10px] pb-[30px] transition-all dark:text-[#8E8E8E] ${
         isScrollable
           ? "mt-auto relative"
           : "fixed bottom-[0px] left-0 w-full"
