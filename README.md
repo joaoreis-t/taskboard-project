@@ -1,73 +1,92 @@
-# React + TypeScript + Vite
+# 📋 Taskboard - Gerenciador de Tarefas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎯 Sobre o projeto
 
-Currently, two official plugins are available:
+Aplicação Web **React + TypeScript** que permite gerenciar tarefas com prazos, filtros, busca e dashboard de produtividade. O Taskboard é voltado para estudantes e profissionais que precisam acompanhar trabalhos com prazos de entrega, oferecendo uma interface simples, responsiva e fácil de usar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Funcionalidades principais:**
 
-## React Compiler
+* Adicionar novas tarefas.
+* Visualizar detalhes de cada tarefa em modal.
+* Marcar tarefas como concluídas.
+* Filtrar tarefas por status ("Pendente" ou "Concluído").
+* Buscar tarefas pelo título.
+* Dashboard com métricas de tarefas da semana, atrasadas e concluídas.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Tecnologias Utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* **Vite** — ferramenta de build rápida e leve, ideal para desenvolvimento React moderno.
+* **React** — biblioteca principal para construção da interface.
+* **TypeScript** — tipagem estática para maior segurança e consistência.
+* **Tailwind CSS** — framework utilitário para estilização responsiva e rápida.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+## 📦 Dependências Necessárias
+
+* **Node.js** (versão 22 ou superior)
+* **npm** ou **yarn**
+
+Após clonar o repositório, instale as dependências executando:
+
+```bash
+npm install
+# ou
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ▶️ Como Rodar a Aplicação (Desenvolvimento)
+
+```bash
+npm run dev
+# ou
+yarn dev
 ```
+
+O Vite exibirá o endereço local, geralmente:
+
+```
+http://localhost:5173/
+```
+
+
+
+## ⚠️ Desafios Enfrentados
+
+* Garantir responsividade e experiência consistente em diferentes tamanhos de tela (mobile first).
+* Implementar filtros combinados (status + busca) sem causar lentidão.
+
+
+
+## ✅ Boas práticas aplicadas no projeto
+
+* Componentização clara por funcionalidade (Dashboard, Tasklist, NewTask, Task, Filter).
+* Tipagem completa com TypeScript para evitar inconsistências de dados.
+* Responsividade total usando TailwindCSS (Mobile First).
+* Persistência de dados via Local Storage.
+
+
+
+## 🚀 Próximos Passos
+
+* Implementar backend para persistência real (ex.: Firebase ou Node.js + banco de dados).
+* Permitir edição de tarefas.
+* Adicionar categorias filtráveis além de status.
+* Notificações ou lembretes de tarefas próximas ou atrasadas.
+* Melhorias de UI/UX, incluindo animações para adicionar/remover tarefas.
+
+
+
+## 📎 Contribuição
+
+Contribuições são bem-vindas! Abra issues para bugs ou sugestões, ou envie PRs.
+
+
+
+## 🧩 Autor
+
+Desenvolvido com 💻 e ☕ por **[João Reis]**
